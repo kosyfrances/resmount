@@ -1,7 +1,21 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 
-def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
-    server_address = ('', 5555)
-    httpd = server_class(server_address, handler_class)
+class GetHandler(BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        message = 'It works'
+        self.send_response(200)
+        self.send_header()
+        self.wfile.write(message)
+        return
+
+
+def run():
+    print('Starting server ...')
+    server_address = ('localhost', 5555)
+    httpd = HTTPServer(server_address, GetHandler)
     httpd.serve_forever()
+
+
+run()
