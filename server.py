@@ -13,7 +13,7 @@ class GetHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    server_address = ('localhost', 5555)
+    server_address = ('0.0.0.0', 5555)
     print('Starting server on localhost:5555')
     httpd = HTTPServer(server_address, GetHandler)
     httpd.serve_forever()
