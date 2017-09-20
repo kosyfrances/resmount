@@ -9,7 +9,7 @@ Resmount is written in Python3.
 ### Setup (With Docker)
 To use Resmount, be sure to have [docker](https://docs.docker.com/engine/installation/) installed and set up on your machine first.
 
-* Check if you have `jq` installed by typing `jq` on the commandline. Install it if you do not have it.
+* Check if you have [jq](https://stedolan.github.io/jq/) installed by typing ` which jq` on the commandline. Install it if you get an empty response.
 
 * Clone this repo
     ```
@@ -22,11 +22,7 @@ To use Resmount, be sure to have [docker](https://docs.docker.com/engine/install
     ```
     $ docker build -t resmount .
     ```
-    NOTE: If you get an error like this `Got permission denied while trying to connect to the Docker daemon socket at ...` then you need to add your username to the docker group.
-    ```sudo usermod -aG docker ${USER}```
-    To apply the new group membership, you can log out of the server and back in, or you can type the following:
-    ```su - ${USER}```
-    You will be prompted to enter your user's password to continue.
+    NOTE: If you get an error like this `Got permission denied while trying to connect to the Docker daemon socket at ...` then run the docker commands with `sudo`.
 
 * Now run Resmount app in the background in detached mode
     ```
@@ -61,7 +57,7 @@ To use Resmount, be sure to have [docker](https://docs.docker.com/engine/install
 
 ### Setup on a Linux machine (Without Docker)
 * Be sure to have python3 set up
-* Check if you have `jq` installed by typing `jq` on the commandline. Install it if you do not have it.
+* Check if you have [jq](https://stedolan.github.io/jq/) installed by typing `which jq` on the commandline. Install it if you get an empty response.
 * Clone this repo
     ```
     $ git clone https://github.com/kosyfrances/resmount.git
@@ -76,6 +72,19 @@ To use Resmount, be sure to have [docker](https://docs.docker.com/engine/install
     ```
 * The output will be something like this:
     ```
+    {
+      "mount_points": [
+        "/sys",
+        "/proc",
+        "/dev",
+        "/dev/pts",
+        "/run",
+        "/",
+        ....
+      ]
+    }
+    ```
+``
     {
       "mount_points": [
         "/sys",
