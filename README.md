@@ -84,16 +84,3 @@ To use Resmount, be sure to have [docker](https://docs.docker.com/engine/install
       ]
     }
     ```
-``
-    {
-      "mount_points": [
-        "/sys",
-        "/proc",
-        "/dev",
-        "/dev/pts",
-        "/run",
-        "/",
-        ....
-      ]
-    }
-    ```
